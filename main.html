@@ -4,8 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-slate-800">
+    <section class="max-w-md min-h-screen mx-auto py-6 bg-gray-200">
+        <!-- navbar -->
+        <nav class="flex justify-around items-center">
+                <img class="w-14" src="./assets/Group.png" alt="">
+                <div class="flex gap-3 justify-center items-center">
+                    <p>残高 </p>
+                    <h1 id="main-balance" class="text-xl font-bold">7500.00<span class="text-lg font-normal">￥</span></h1>
+                </div>
+                <button class="btn">Logout</button>
+        </nav>
+        <!-- cards container -->
+        <div class="mt-10">
+                <h1 class="text-2xl font-bold mb-2 text-left px-3">Welcome to Payooo!</h1>
+                <p class="px-3">Enjoy easy and convenient financial services with us. Cashout anytime anywhere</p>
+
+                <div class="cards grid grid-cols-3 mt-14 gap-3 p-4">
+                    <div class="box border p-4 text-center rounded-sm">
+                        <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="">
+                        <h3 class="">Add Money</h3>
+                    </div>
+                    <div class="box border p-4 text-center rounded-sm">
+                        <img class="w-8 mx-auto" src="./assets/send1.png" alt="">
+                        <h3 class="">Cashout</h3>
+                    </div>
+                    <div class="box border p-4 text-center rounded-sm">
+                        <img class="w-8 mx-auto" src="./assets/money1.png" alt="">
+                        <h3 class="">Transfer Money</h3>
+                    </div>
+                    <div class="box border p-4 text-center rounded-sm">
+                        <img class="w-8 mx-auto" src="./assets/bonus1.png" alt="">
+                        <h3 class="">Get Bonus</h3>
+                    </div>
+                    <div class="box border p-4 text-center rounded-sm">
+                        <img class="w-8 mx-auto" src="./assets/purse1.png" alt="">
+                        <h3 class="">Pay Bill</h3>
+                    </div>
+                    <div class="box border p-4 text-center rounded-sm">
+                        <img class="w-8 mx-auto" src="./assets/transaction1.png" alt="">
+                        <h3 class="">Transactions</h3>
+                    </div>
+                </div>
+        </div>
+        <!-- add money section -->
+        <div>
+            <h2 class="text-xl font-semibold my-3 px-4">Add Money</h2>
+<div class="">
+    <div class="hero-content flex-col lg:flex-row-reverse">
     
+    <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+      <div class="card-body">
+        <legend>Select Bank</legend>
+        <fieldset class="fieldset">
+            <select class="select">
+               <option disabled selected>Select your Bank</option>
+               <option value="みずほ銀行">みずほ銀行</option>
+               <option value="三井住友銀行">三井住友銀行</option>
+               <option value="りそな銀行">りそな銀行</option>
+               <option value="SMBC銀行">smbc銀行</option>
+               <option value="Japan Post Bank">ゆうちょ銀行</option>
+            </select>
+            
+        </fieldset>
+        <fieldset class="fieldset">
+          <label class="label">Account Number</label>
+          <input value="0123456789" type="email" class="input" placeholder="Type Your Account" />
+          <label class="label">Amount</label>
+          <input id="amount" type="number" class="input" placeholder="Your desired Amount" required/>
+          <label class="label">暗証番号</label>
+          <input id="pin" value="1234" type="text" class="input" placeholder="****" required/>
+          <div><a class="link link-hover">Forgot password?</a></div>
+          <button id="add-money" class="btn btn-neutral bg-blue-700 border-none rounded-3xl mt-4">Add Money</button>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+    </section>
+    <script src="./script/addMoney.js"></script>
 </body>
 </html>
