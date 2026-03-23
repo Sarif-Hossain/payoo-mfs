@@ -1,19 +1,34 @@
+
 document.getElementById('add-money').addEventListener('click', function(event){
     event.preventDefault();
-    const amount = document.getElementById('amount').value;
-    const convertedAmount = parseFloat(amount);
-    const pin = document.getElementById('pin').value;
-    const convertedPin = parseInt(pin);
-    
-    const mainBalance = document.getElementById('main-balance').innerText;
-    const convertedMainBalance = parseFloat(mainBalance);
+    const amount = getInputValueByID('amount');
+    const pin = getInputValueByID('pin');
+    const account = document.getElementById('account-number').value;
+    const mainBalance = getInnerTextByID('main-balance');
 
-    if(convertedPin === 1234){
-        const sum = convertedMainBalance + convertedAmount;
-        document.getElementById('main-balance').innerText = sum;
-        
-    } 
-    else{
-        console.log('Invalid Pin');
+    const selectedBank = document.getElementById('select-bank').value;
+
+    if (account.length === 10) {
+        if (pin === 1234) {
+            const sum = mainBalance + amount;
+            setInnerTextByIDandValue('main-balance', sum);
+
+            const container = document.getElementById('transaction-container');
+
+            const div = document.createElement("div");
+            div.classList.add("bg-blue-200");
+            div.innerHTML = `
+            <h2 class="text-center text-xl font-semibold">Added Money From ${selectedBank}</h2>
+            <h3 class="pl-6">${amount} ￥</h3>
+            <p class="pl-6">Account Number: ${account}</p>
+            `
+            container.appendChild(div);
+        }
+        else {
+            console.log('Invalid Pin');
+        }
+    }
+    else {
+        console.log('Enter Valid Account Number');
     }
 })

@@ -65,18 +65,18 @@
                         <div class="card-body">
                             <legend>Select Bank</legend>
                             <fieldset class="fieldset">
-                                <select class="select">
+                                <select id="select-bank" class="select">
                                     <option disabled selected>Select your Bank</option>
                                     <option value="みずほ銀行">みずほ銀行</option>
                                     <option value="三井住友銀行">三井住友銀行</option>
                                     <option value="りそな銀行">りそな銀行</option>
-                                    <option value="SMBC銀行">smbc銀行</option>
+                                    <option value="SMBC銀行">SMBC銀行</option>
                                     <option value="Japan Post Bank">ゆうちょ銀行</option>
                                 </select>
                             </fieldset>
         <fieldset class="fieldset">
           <label class="label">Account Number</label>
-          <input value="0123456789" type="email" class="input" placeholder="Type Your Account" />
+          <input id="account-number" value="0123456789" type="text" class="input" placeholder="Type Your Account" />
           <label class="label">Amount</label>
           <input id="amount" type="number" class="input" placeholder="Your desired Amount" required/>
           <label class="label">暗証番号</label>
@@ -111,7 +111,9 @@
     <!-- transaction history section -->
 
     <section id="transaction-history" class=" max-w-md min-h-screen mx-auto -mt-40 bg-gray-200">
-        <h1 class="text-3xl font-bold text-center">Transaction History</h1>
+        <h1 class="text-3xl font-bold text-center mb-5">Transaction History</h1>
+        <div id="transaction-container"></div>
+
     </section>
     <script src="./utilities/utilities.js"></script>
     <script src="./script/addMoney.js"></script>
